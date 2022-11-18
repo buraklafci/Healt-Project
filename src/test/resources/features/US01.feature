@@ -1,11 +1,47 @@
 @US01
-Feature: US01 Kayıt olmak için SSN, First Name ve Last Name bilgileri girilebilmelidir.
+Feature: US01 Kayit olmak icin SSN, First Name ve Last Name bilgileri girilebilmelidir.
 
-  Scenario Outline: TC01 Geçerli bir SSN, 3. ve 5. rakamdan sonra "-" içermeli ve 9 rakamdan oluşmalıdır.
-    Given kullanici url anasayfasina gider
+  Scenario: TC01 Gecerli bir SSN, 3. ve 5. rakamdan sonra "-" icermeli ve 9 rakamdan olusmalidir.
+    Given kullanici "MedunnaUrl" anasayfasina gider
     Then kullanici bilgi sekmesine tiklanir
     And  kullanici register butonuna tiklar
-    And SSN no "<number>" istenilen formatta girilmedigini dogrular
+    And SSN no "12354657" istenilen formatta girilmedigini dogrular
 
-    Examples: | number    |
-              | 123456789 |
+
+  Scenario: TC02 Gecerli bir SSN, 3. ve 5. rakamdan sonra "-" icermeli ve 9 rakamdan olusmalidir.
+    Given kullanici "MedunnaUrl" anasayfasina gider
+    Then kullanici bilgi sekmesine tiklanir
+    And  kullanici register butonuna tiklar
+    And SSN no "177-81-7294" istenilen formatta girildigini dogrular
+
+
+  Scenario: TC03 Gecerli bir SSN, 3. ve 5. rakamdan sonra "-" icermeli ve 9 rakamdan olusmalidir.
+    Given kullanici "MedunnaUrl" anasayfasina gider
+    Then kullanici bilgi sekmesine tiklanir
+    And  kullanici register butonuna tiklar
+    And SSN no "" istenilen formatta girildigini dogrular
+
+
+  Scenario: TC04 Gecerli bir SSN, 3. ve 5. rakamdan sonra "-" icermeli ve 9 rakamdan olusmalidir.
+    Given kullanici "MedunnaUrl" anasayfasina gider
+    Then kullanici bilgi sekmesine tiklanir
+    And  kullanici register butonuna tiklar
+    And firstname "" istenilen formatta girildigini dogrular
+
+  Scenario: TC05 Gecerli bir SSN, 3. ve 5. rakamdan sonra "-" icermeli ve 9 rakamdan olusmalidir.
+    Given kullanici "MedunnaUrl" anasayfasina gider
+    Then kullanici bilgi sekmesine tiklanir
+    And  kullanici register butonuna tiklar
+    And firstname "kullanici" istenilen formatta girildigini dogrular
+
+  Scenario: TC06 Gecerli bir SSN, 3. ve 5. rakamdan sonra "-" icermeli ve 9 rakamdan olusmalidir.
+    Given kullanici "MedunnaUrl" anasayfasina gider
+    Then kullanici bilgi sekmesine tiklanir
+    And  kullanici register butonuna tiklar
+    And lastname "" istenilen formatta girildigini dogrular
+
+  Scenario: TC07 Gecerli bir SSN, 3. ve 5. rakamdan sonra "-" icermeli ve 9 rakamdan olusmalidir.
+    Given kullanici "MedunnaUrl" anasayfasina gider
+    Then kullanici bilgi sekmesine tiklanir
+    And  kullanici register butonuna tiklar
+    And lastname "girisi" istenilen formatta girildigini dogrular

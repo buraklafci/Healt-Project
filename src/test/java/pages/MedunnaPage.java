@@ -54,5 +54,14 @@ public class MedunnaPage {
     public WebElement register;
 @FindBy(xpath = "//input[@id='ssn']")
     public WebElement ssntextbox;
+@FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
+    public WebElement ssndogrulama;
+    @FindBy(xpath = "//*[text()='Your SSN is required.']")
+    public WebElement ssnbosdogrulama;
+
+    @FindBy(xpath = "//*[@id='firstName']")
+    public WebElement firstName;
+    @FindBy(xpath = "//input[@id='lastName']")
+    public WebElement lastName;
 
 }
