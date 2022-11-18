@@ -21,6 +21,7 @@ public class US011_StepDef {
 
     @Then("Doktor kullanıcı adı ve şifre girerek siteye giriş yapar")
     public void doktorKullanıcıAdıVeŞifreGirerekSiteyeGirişYapar() {
+
     }
 
     @Then("Doktor My Pages butonuna tiklar")
