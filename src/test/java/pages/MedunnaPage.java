@@ -39,7 +39,16 @@ public class MedunnaPage {
     public WebElement headers;
 
     @FindBy(xpath = "//tbody//tr")
-    public List<WebElement> hastaBilgileri;
+    public List<WebElement> hastaBilgileriTable;
+
+    @FindBy(xpath = "//*[@name='ssn']")
+    public WebElement hastaArama;
+
+    @FindBy(xpath = "//*[.='Edit']")
+    public WebElement edit;
+
+    @FindBy(css = "#patient-id")
+    public WebElement hastaBilgileriID;
 
     @FindBy(xpath="//span[text()='Register']")
     public WebElement register;
