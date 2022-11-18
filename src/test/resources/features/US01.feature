@@ -1,13 +1,4 @@
-@login
-Feature:TC001  Medunna login
-  Scenario Outline: Login test
+Feature: US01 Kayıt olmak için SSN, First Name ve Last Name bilgileri girilebilmelidir.
 
-    Given kullanici medunna anasayfasina gider
-    When login olmak icin signin e tiklar
-    And username icin "<username>" kullanici adini gonderir
-    And password icin "<password>" parolasini gonderir
-    And signine tiklar
-
-    Examples:
-      | username | password |
-      |ahmetPersonel1|hasta+90|
+  Scenario: TC01 Geçerli bir SSN, 3. ve 5. rakamdan sonra "-" içermeli ve 9 rakamdan oluşmalıdır.
+    Given :
