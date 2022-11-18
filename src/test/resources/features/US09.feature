@@ -9,6 +9,7 @@ Feature:US09 Staff (Personel),hasta bilgilerini görebilmeli, düzenleyebilmeli 
   Scenario:TC002 Kullanıcı bütün hasta bilgilerini "id, firstname, lastname, birthdate, email, phone, gender, blood group,
   address, description, user, country and state/city" düzenleyebilmelidir."
 
+
     Then Hasta arama kutusuna hastanin "158-13-2323"'i girilir
     Then Edit butonuna tiklanir
     And Id bilgisi duzenlenmedi
