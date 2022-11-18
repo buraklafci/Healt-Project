@@ -41,5 +41,9 @@ public class MedunnaPage {
     @FindBy(xpath = "//tbody//tr")
     public List<WebElement> hastaBilgileri;
 
+    @FindBy(xpath="//span[text()='Register']")
+    public WebElement register;
+@FindBy(xpath = "//input[@id='ssn']")
+    public WebElement ssntextbox;
 
 }
