@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -63,12 +64,12 @@ public class MedunnaStaffStepDefs {
     }
 
     @And("Hastanin diger bilgileri guncellendi")
-    public void hastaninDigerBilgileriGuncellendi() {
+    public void hastaninDigerBilgileriGuncellendi() throws InterruptedException {
         actions.sendKeys(Keys.TAB).sendKeys("Berk").
                 sendKeys(Keys.TAB).sendKeys("Karanfil").
                 sendKeys(Keys.TAB).sendKeys("02.02.1991").
                 sendKeys(Keys.RIGHT).sendKeys("23:23").
-                sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys("bosversene@gmail.com").
+               sendKeys(Keys.TAB).sendKeys("bosversene@gmail.com").
                 sendKeys(Keys.TAB).sendKeys("5555555555").
                 sendKeys(Keys.TAB).sendKeys("Male").
                 sendKeys(Keys.TAB).sendKeys("A+").
@@ -76,17 +77,35 @@ public class MedunnaStaffStepDefs {
                 sendKeys(Keys.TAB).sendKeys("baksanaBana").
                 sendKeys(Keys.TAB).sendKeys("hy").
                 sendKeys(Keys.TAB).sendKeys("Turkey ").
-                sendKeys(Keys.RIGHT).sendKeys(Keys.RIGHT).sendKeys(Keys.RIGHT).sendKeys(Keys.RIGHT).sendKeys(Keys.RIGHT).sendKeys(Keys.RIGHT).sendKeys(Keys.RIGHT).
-                sendKeys(Keys.TAB).sendKeys("Adana").perform();
+                sendKeys(Keys.RIGHT).sendKeys(Keys.RIGHT).sendKeys(Keys.RIGHT).sendKeys(Keys.RIGHT).sendKeys(Keys.RIGHT).sendKeys(Keys.RIGHT).sendKeys(Keys.RIGHT).perform();
+
+        Thread.sleep(3000);
+        medunnaPage.state.sendKeys("Adana");
+        medunnaPage.saveButton.click();
+
 
 
     }
-    @And("Diger hasta bilgileri guncellendi")
-    public void digerHastaBilgileriGuncenlendi() {
+
+
+    @And("Wiev'e tiklanir")
+    public void wievETiklanir() {
+        JavascriptExecutor jse= (JavascriptExecutor) Driver.getDriver();
+        // jse.executeScript("arguments[0].scrollIntoView(true);",medunnaPage.viewButton);
+        jse.executeScript("arguments[0].click();",medunnaPage.viewButton);
+
+    }
+
+    @And("Tum bilgilerin dolduruldugu goruldu")
+    public void tumBilgilerinDoldurulduguGoruldu() {
+        assertFalse(medunnaPage.SSNBosmu.getText().isEmpty());
+    }
+
 
 
     }
 
 
 
-}
+
+

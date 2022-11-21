@@ -63,5 +63,19 @@ public class MedunnaPage {
     public WebElement firstName;
     @FindBy(xpath = "//input[@id='lastName']")
     public WebElement lastName;
+    @FindBy(css = "#patient-cstate")
+    public WebElement state;
 
+    @FindBy(xpath ="//span[.='Save']")
+    public WebElement saveButton;
+
+    @FindBy(css ="a[class='btn btn-info btn-sm")
+    public WebElement viewButton;
+
+    @FindBy(xpath ="//dd[.='456-87-1234']")
+    public WebElement SSNBosmu;
+    @FindBy(xpath ="//dd[.='Okkes ']")
+    public WebElement firstNameBosmu;
+    @FindBy(xpath ="//dd[.='Abi ']")
+    public WebElement lastNameBosmu;
 }

@@ -16,7 +16,13 @@ Feature:US09 Staff (Personel),hasta bilgilerini görebilmeli, düzenleyebilmeli 
     And Hastanin diger bilgileri guncellendi
     And Diger hasta bilgileri guncellendi
 
+  Scenario: TC003 Kullanıcı, SSN'lerine göre yeni bir başvuru sahibi arayabilmeli ve tüm kayıt bilgilerinin doldurulduğunu görebilmelidir.
 
+    When My Pages sekmesine tiklar
+    Then Search Patient secegine tiklar
+    Then Hasta arama kutusuna hastanin "158-13-2323"'i girilir
+    And Wiev'e tiklanir
+    And Tum bilgilerin dolduruldugu goruldu
 
 
 
