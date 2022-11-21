@@ -14,7 +14,7 @@ Feature:US09 Staff (Personel),hasta bilgilerini görebilmeli, düzenleyebilmeli 
     Then Edit butonuna tiklanir
     And Id bilgisi duzenlenmedi
     And Hastanin diger bilgileri guncellendi
-    And Diger hasta bilgileri guncellendi
+
 
   Scenario: TC003 Kullanıcı, SSN'lerine göre yeni bir başvuru sahibi arayabilmeli ve tüm kayıt bilgilerinin doldurulduğunu görebilmelidir.
 
