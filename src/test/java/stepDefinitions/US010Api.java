@@ -10,22 +10,34 @@ import pojos.AppointmentPojo;
 import pojos.PatientPojo;
 import pojos.Physician;
 import pojos.UserPojo;
+import utilities.ConfigReader;
+import utils.Authentication;
 import utils.ObjectMapperUtils;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 import static utils.Authentication.generateToken;
 
-public class US010Api extends MedunnaBaseUrl {
+public class US010Api  {
     static Response response;
     static AppointmentPojo actualData;
     static AppointmentPojo expectedData;
     static UserPojo user;
     static PatientPojo patient;
     static Physician physician;
+    static String token;
 
     @Given("Doktor Medunna Url i id ile ayarlar")
     public void doktorMedunnaUrlidIleAyarlar() {
-        spec.pathParams("1","api","2","appointments","3",302324);
+        String patientEndPoint = ConfigReader.getProperty("patientEndPoint");
+        token = Authentication.generateToken();
+        response = given().headers(
+                "Authorization",
+                "Bearer " + token,
+                "Content-Type`",
+                ContentType.JSON,
+                "Accept",
+                ContentType.JSON).when().get(patientEndPoint);
+        response.prettyPrint();
     }
 
     @And("Doctor GET request yapar ve response alir")
@@ -43,12 +55,12 @@ public class US010Api extends MedunnaBaseUrl {
                 "Professor Doctor",user,"OPHTHALMOLOGY",null,null,200.00,"","image/png");
 
          expectedData= new AppointmentPojo("hastaosbt","2022-11-16T10:19:30.334695Z",302324,
-                "2022-11-21T00:00:00Z","2022-11-21T01:00:00Z","PENDING","Gecmis rahatsizligi bulunmamakta",
+                "2022-11-21T00:00:00Z","2022-11-21T01:00:00Z","COMPLETED","Gecmis rahatsizligi bulunmamakta",
                 "gozluk + Goz damlasi","0.50 Astigmat","0.50 Astigmat gozluk, aqua goz damlasi gunde 5 damla",
                 "",physician,patient,null);
 
-         response = given().spec(spec).header("Authorization","Bearer "+generateToken())
-                .contentType(ContentType.JSON).when().get("/{1}/{2}/{3}");
+        // response = given().spec(spec).header("Authorization","Bearer "+generateToken())
+         //       .contentType(ContentType.JSON).when().get("/{1}/{2}/{3}");
 
     }
 
