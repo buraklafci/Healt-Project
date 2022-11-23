@@ -23,10 +23,9 @@ public class US010Api extends MedunnaBaseUrl {
     static PatientPojo patient;
     static Physician physician;
 
-    @Given("Doktor Medunna Url i ayarlar")
-    public void doktorMedunnaUrlIAyarlar() {
-        //spec = new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("MedunnaUrl")).build();
-        spec.pathParams("1","api","2","appointments","3","302324");
+    @Given("Doktor Medunna Url i id ile ayarlar")
+    public void doktorMedunnaUrlidIleAyarlar() {
+        spec.pathParams("1","api","2","appointments","3",302324);
     }
 
     @And("Doctor GET request yapar ve response alir")
