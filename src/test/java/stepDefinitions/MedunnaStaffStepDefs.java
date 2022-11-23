@@ -67,11 +67,11 @@ public class MedunnaStaffStepDefs {
     @And("Hastanin diger bilgileri guncellendi")
     public void hastaninDigerBilgileriGuncellendi() throws InterruptedException {
         Driver.getDriver().navigate().refresh();
-        actions.sendKeys(medunnaPage.firstName).doubleClick().sendKeys("Adanali").
-                sendKeys(Keys.TAB).sendKeys("Turkiyeli").
+        actions.sendKeys(medunnaPage.firstName).doubleClick().sendKeys("Adanali01").
+                sendKeys(Keys.TAB).sendKeys("Turkiyeliii").
                 sendKeys(Keys.TAB).sendKeys("02.02.1991").
                 sendKeys(Keys.RIGHT).sendKeys("23:23").
-               sendKeys(Keys.TAB).sendKeys("bosversene@gmail.com").
+               sendKeys(Keys.TAB).sendKeys("bosversenee@gmail.com").
                 sendKeys(Keys.TAB).sendKeys("5555555555").
                 sendKeys(Keys.TAB).sendKeys("Male").
                 sendKeys(Keys.TAB).sendKeys("A+").
@@ -82,7 +82,7 @@ public class MedunnaStaffStepDefs {
         ReusableMethods.waitFor(2);
         actions.click(medunnaPage.description).sendKeys("banabuuggg").
                 sendKeys(Keys.TAB).sendKeys("hy").
-                sendKeys(Keys.TAB).sendKeys("Germany").perform();
+                sendKeys(Keys.TAB).sendKeys("Turkey").perform();
         ReusableMethods.waitFor(2);
         medunnaPage.saveButton.submit();
         ReusableMethods.waitForVisibility(medunnaPage.bilgilerGuncellendi,5);

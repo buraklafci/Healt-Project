@@ -71,7 +71,7 @@ public class MedunnaPage {
     @FindBy(xpath ="//span[.='Save']")
     public WebElement saveButton;
 
-    @FindBy(xpath ="//div[.='A Patient is updated with identifier 3359']")
+    @FindBy(xpath ="//div[.='A Patient is updated with identifier 1051']")
     public WebElement bilgilerGuncellendi;
 
     @FindBy(css ="a[class='btn btn-info btn-sm")
@@ -113,6 +113,13 @@ public class MedunnaPage {
     public WebElement signOut;
     @FindBy(xpath ="//button[.='SIGN IN AGAIN']")
     public WebElement sigInAgain;
+
+    @FindBy(xpath ="//span[.='Items&Titles']")
+    public WebElement itemsTitles;
+    @FindBy(xpath ="//span[.='Patient']")
+    public WebElement patient;
+    @FindBy(xpath ="//span[.='Patients']")
+    public WebElement patients;
 
 
 

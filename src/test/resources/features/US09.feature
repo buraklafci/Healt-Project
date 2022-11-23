@@ -41,8 +41,7 @@ Feature:US09 Staff (Personel),hasta bilgilerini görebilmeli, düzenleyebilmeli 
   Scenario: TC006  Admin, hastaları SSN kimliklerine göre arayamadi.
 
     Given logInAdmin
-    Then Search Patient secegine tiklar
-     And Admin, hastaları SSN kimliklerine göre arayamadi.
+    Then Admin, hastaları SSN kimliklerine göre arayamadi.
 
 
 
