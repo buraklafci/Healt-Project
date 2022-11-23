@@ -24,14 +24,23 @@ public class MedunnaLoginStepDefs {
         medunnaPage.signinButton.click();
     }
 
-    @And("username icin {string} kullanici adini gonderir")
-    public void usernameIcinKullaniciAdiniGonderir(String username) {
-        medunnaPage.username.sendKeys(username);
+    @And("logInStaf icin username kullanici adini gonderir")
+    public void logInStafIcinKullaniciAdiniGonderir() {
+        medunnaPage.username.sendKeys(ConfigReader.getProperty("StaffUserName"));
     }
 
-    @And("password icin {string} parolasini gonderir")
-    public void passwordIcinParolasiniGonderir(String password) {
-        medunnaPage.password.sendKeys(password);
+    @And("logInStaf icin password parolasini gonderir")
+    public void logInStafIcinParolasiniGonderir() {
+        medunnaPage.password.sendKeys(ConfigReader.getProperty("StaffPassword"));
+    }
+    @And("loginAdmin icin username kullanici adini gonderir")
+    public void loginAdminIcinKullaniciAdiniGonderir() {
+        medunnaPage.username.sendKeys(ConfigReader.getProperty("AdminUserName"));
+    }
+
+    @And("loginAdmin icin password parolasini gonderir")
+    public void loginAdminIcinParolasiniGonderir() {
+        medunnaPage.password.sendKeys(ConfigReader.getProperty("AdminPassword"));
     }
 
     @And("signine tiklar")
@@ -39,12 +48,36 @@ public class MedunnaLoginStepDefs {
         medunnaPage.signinWithCredentials.click();
     }
 
-    @Given("logIn")
-    public void logın() {
+    @Given("logInStaf")
+    public void logInStaf() {
+
         kullaniciAnasayfasinaGider();
         loginOlmakIcinSigninETiklar();
-        usernameIcinKullaniciAdiniGonderir(ConfigReader.getProperty("StaffUserName"));
-        passwordIcinParolasiniGonderir(ConfigReader.getProperty("StaffPassword"));
+        logInStafIcinKullaniciAdiniGonderir();
+        logInStafIcinParolasiniGonderir();
         signineTiklar();
     }
+
+    @Given("logInAdmin")
+    public void logInAdmin() {
+        ReusableMethods.waitFor(4);
+        if(medunnaPage.accountMenu.isDisplayed()){
+            medunnaPage.accountMenu.click();
+            ReusableMethods.waitFor(5);
+            medunnaPage.signOut.click();
+            ReusableMethods.waitForVisibility(medunnaPage.sigInAgain,5);
+            medunnaPage.sigInAgain.click();
+
+            loginAdminIcinKullaniciAdiniGonderir();
+            loginAdminIcinParolasiniGonderir();
+            signineTiklar();
+        }
+        else {
+        kullaniciAnasayfasinaGider();
+        loginOlmakIcinSigninETiklar();
+        loginAdminIcinKullaniciAdiniGonderir();
+        loginAdminIcinParolasiniGonderir();
+        signineTiklar();
+    }
+}
 }
