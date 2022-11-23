@@ -1,4 +1,4 @@
-@api10 @Api
+@api10
 Feature: US010_ApiTest
 
   Scenario: doctor should be able to see his/her appointment list in api
