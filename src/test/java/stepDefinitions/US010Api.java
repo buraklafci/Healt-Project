@@ -10,6 +10,7 @@ import pojos.AppointmentPojo;
 import pojos.PatientPojo;
 import pojos.Physician;
 import pojos.UserPojo;
+import utilities.ReusableMethods;
 import utils.ObjectMapperUtils;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
@@ -26,7 +27,11 @@ public class US010Api extends MedunnaBaseUrl {
     @Given("Doktor Medunna Url i ayarlar")
     public void doktorMedunnaUrlIAyarlar() {
         //spec = new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("MedunnaUrl")).build();
+        ReusableMethods.waitFor(3);
         spec.pathParams("1","api","2","appointments","3","302324");
+        ReusableMethods.waitFor(3);
+        response = given().spec(spec).header("Authorization","Bearer "+generateToken())
+                .contentType(ContentType.JSON).when().get("/{1}/{2}/{3}");
     }
 
     @And("Doctor GET request yapar ve response alir")
@@ -48,8 +53,7 @@ public class US010Api extends MedunnaBaseUrl {
                 "gozluk + Goz damlasi","0.50 Astigmat","0.50 Astigmat gozluk, aqua goz damlasi gunde 5 damla",
                 "",physician,patient,null);
 
-         response = given().spec(spec).header("Authorization","Bearer "+generateToken())
-                .contentType(ContentType.JSON).when().get("/{1}/{2}/{3}");
+
 
     }
 
