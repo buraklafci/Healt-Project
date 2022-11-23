@@ -44,7 +44,7 @@ public class MedunnaPage {
     @FindBy(xpath = "//*[@name='ssn']")
     public WebElement hastaArama;
 
-    @FindBy(xpath = "//*[.='Edit']")
+    @FindBy(xpath = "//*[text()='Edit']")
     public WebElement edit;
 
     @FindBy(css = "#patient-id")
@@ -59,9 +59,69 @@ public class MedunnaPage {
     @FindBy(xpath = "//*[text()='Your SSN is required.']")
     public WebElement ssnbosdogrulama;
 
-    @FindBy(xpath = "//*[@id='firstName']")
+    @FindBy(xpath = "//*[@name='firstName']")
     public WebElement firstName;
     @FindBy(xpath = "//input[@id='lastName']")
     public WebElement lastName;
+    @FindBy(css = "#patient-cstate")
+    public WebElement state;
+    @FindBy(css = "#patient-description")
+    public WebElement description;
+
+    @FindBy(xpath ="//span[.='Save']")
+    public WebElement saveButton;
+
+    @FindBy(xpath ="//div[.='A Patient is updated with identifier 1051']")
+    public WebElement bilgilerGuncellendi;
+
+    @FindBy(css ="a[class='btn btn-info btn-sm")
+    public WebElement viewButton;
+
+    @FindBy(xpath ="(//dl[@class=\"jh-entity-details\"]/dd)[1]")
+    public WebElement SSNBosmu;
+    @FindBy(xpath ="(//dl[@class=\"jh-entity-details\"]/dd)[2]")
+    public WebElement firstNameBosmu;
+    @FindBy(xpath ="(//dl[@class=\"jh-entity-details\"]/dd)[3]")
+    public WebElement lastNameBosmu;
+    @FindBy(xpath ="(//dl[@class=\"jh-entity-details\"]/dd)[4]")
+    public WebElement birthDateBosmu;
+    @FindBy(xpath ="(//dl[@class=\"jh-entity-details\"]/dd)[5]")
+    public WebElement emailBosmu;
+    @FindBy(xpath ="(//dl[@class=\"jh-entity-details\"]/dd)[6]")
+    public WebElement genderBosmu;
+    @FindBy(xpath ="(//dl[@class=\"jh-entity-details\"]/dd)[7]")
+    public WebElement bloodGroupBosmu;
+    @FindBy(xpath ="(//dl[@class=\"jh-entity-details\"]/dd)[8]")
+    public WebElement addressBosmu;
+    @FindBy(xpath ="(//dl[@class=\"jh-entity-details\"]/dd)[9]")
+    public WebElement descriptionBosmu;
+    @FindBy(xpath ="(//dl[@class=\"jh-entity-details\"]/dd)[10]")
+    public WebElement createdDateBosmu;
+    @FindBy(xpath ="(//dl[@class=\"jh-entity-details\"]/dd)[11]")
+    public WebElement userBosmu;
+    @FindBy(xpath ="(//dl[@class=\"jh-entity-details\"]/dd)[12]")
+    public WebElement countryBosmu;
+    @FindBy(xpath ="(//dl[@class=\"jh-entity-details\"]/dd)[13]")
+    public WebElement stateBosmu;
+
+    @FindBy(xpath ="//tbody//tr[1]//td[16]")
+    public WebElement deleteYok;
+
+    @FindBy(css ="#account-menu")
+    public WebElement accountMenu;
+    @FindBy(xpath ="//*[@data-icon='sign-out-alt']")
+    public WebElement signOut;
+    @FindBy(xpath ="//button[.='SIGN IN AGAIN']")
+    public WebElement sigInAgain;
+
+    @FindBy(xpath ="//span[.='Items&Titles']")
+    public WebElement itemsTitles;
+    @FindBy(xpath ="//span[.='Patient']")
+    public WebElement patient;
+    @FindBy(xpath ="//span[.='Patients']")
+    public WebElement patients;
+
+
+
 
 }
