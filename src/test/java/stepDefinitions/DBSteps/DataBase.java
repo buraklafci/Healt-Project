@@ -28,6 +28,6 @@ public class DataBase {
     @And("kullanici kullanici bilgilerini dogrular")
     public void kullaniciKullaniciBilgileriniDogrular() {
 
-        assertTrue(actualData.contains("456-25-6547"));
+        assertTrue(actualData.contains("300396"));
     }
 }
