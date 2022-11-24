@@ -11,7 +11,7 @@ import static org.junit.Assert.assertTrue;
 import static utilities.DatabaseUtility.createConnection;
 import static utilities.DatabaseUtility.getColumnData;
 
-public class DataBase {
+public class RegistrationStepDefs {
     List<Object>actualData;
     @Given("kullanici connection kurar")
     public void kullaniciConnectionKurar() {
@@ -28,6 +28,6 @@ public class DataBase {
     @And("kullanici kullanici bilgilerini dogrular")
     public void kullaniciKullaniciBilgileriniDogrular() {
 
-        assertTrue(actualData.contains("300396"));
+        assertTrue(actualData.contains("344-81-7294"));
     }
 }

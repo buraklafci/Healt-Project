@@ -24,7 +24,7 @@ Actions actions=new Actions(Driver.getDriver());
 
     @And("kullanici register butonuna tiklar")
     public void kullaniciRegisterButonunaTiklar() {
-medunnaPage.register.click();
+    medunnaPage.register.click();
     }
 
     @And("SSN no {string} istenilen formatta girilmedigini dogrular")

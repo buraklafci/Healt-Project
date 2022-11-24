@@ -47,5 +47,15 @@ public class WriteToTxt {
         }
     }
 
+    public static void savepatientEmail(String fileName, List<Object> email){
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName,false));
 
+            for (int i=0; i< email.size(); i++)
+                writer.append(email.get(i).toString()+",\n");
+
+            writer.close();
+        } catch (IOException e){
+        }
+    }
 }

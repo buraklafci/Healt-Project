@@ -20,6 +20,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class MedunnaStaffStepDefs {
+    public static List<WebElement> actualData;
     MedunnaPage medunnaPage=new MedunnaPage();
     Actions actions=new Actions(Driver.getDriver());
     @When("My Pages sekmesine tiklar")
@@ -37,7 +38,8 @@ public class MedunnaStaffStepDefs {
 
     @And("Hasta bilgilerini gorur")
     public void hastaBilgileriniGorur() {
-        List<WebElement> actualData=medunnaPage.hastaBilgileriTable;
+
+       actualData=medunnaPage.hastaBilgileriTable;
         for (WebElement w:actualData){
 
                 System.out.println(w.getText());

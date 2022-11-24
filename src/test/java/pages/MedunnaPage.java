@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -120,6 +121,27 @@ public class MedunnaPage {
     public WebElement patient;
     @FindBy(xpath ="//span[.='Patients']")
     public WebElement patients;
+
+
+    @FindBy(xpath ="//*[@name='username']")
+    public WebElement userName;
+    @FindBy(css ="#email")
+    public WebElement email;
+    @FindBy(xpath ="//*[@name='firstPassword']")
+    public WebElement firstPassword;
+    @FindBy(xpath ="//*[@name='secondPassword']")
+    public WebElement confirmPassword;
+     @FindBy(css ="#register-submit")
+    public WebElement submit;
+
+     @FindBy(xpath ="//tbody//tr//td[7]")
+     public List<WebElement> mailDB;
+
+
+
+
+
+
 
 
 

@@ -1,5 +1,6 @@
-Feature: Registration
-  Scenario Outline: Registration Test
+Feature:  END 2 END
+
+  Scenario Outline: Registration Test UI
     Given kullanici "MedunnaUrl" anasayfasina gider
     Then kullanici bilgi sekmesine tiklanir
     And  kullanici register butonuna tiklar
@@ -14,3 +15,11 @@ Feature: Registration
     Examples: Registration Bilgileri
       |SSN  |firstname|lastname|username|email|password|confirm password|
       |344-81-7294|Berk|Karanfil|berk01 |berk01@gmail.com|berk01|berk01 |
+
+  Scenario Outline: kullanici DB test
+    Given kullanici connection kurar
+    And kullanici tum yeni kayitli bilgileri ceker "<query>" ve "<columnName>"
+    And kullanici kullanici bilgilerini dogrular
+    Examples: test verileri
+      |query  |columnName |
+      |select*from jhi_user|ssn|
