@@ -1,7 +1,7 @@
 @DBTest
 Feature: database Test
   Scenario Outline: kullanici db test
-    Given kullanici connection kurar
+    Given kullanici DB icin connection kurar
     And kullanici tum yeni kayitli bilgileri ceker "<query>" ve "<columnName>"
     And kullanici kullanici bilgilerini dogrular
     Examples: test verileri

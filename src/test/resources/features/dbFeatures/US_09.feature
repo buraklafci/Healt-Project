@@ -1,8 +1,8 @@
-Feature: Kullanıcının DB'den gelen tüm hasta bilgilerini doğrulamalıdır.
+Feature: Kullanıcı DB'den gelen hastanin tum bilgilerini doğrulamalıdır.
   Scenario Outline:DB testing
-    Given kullanici connection kurar
-    Then kullanici tum hasta bilgilerini ceker "<query>" ve "<columnName>"
-    And kullanici tum hasta bilgilerini dogrular
+    Given kullanici DB icin connection kurar
+    Then kullanici tum hasta bilgilerini ceker "<query>"
+    And kullanici hastanin tum bilgilerini dogrular
     Examples: test verileri
-    |query|columnName|
-    |select * from patient |email|
+    |query|
+    |select * from patient where id=4851|

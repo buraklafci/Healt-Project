@@ -13,8 +13,8 @@ import static utilities.DatabaseUtility.getColumnData;
 
 public class RegistrationStepDefs {
     List<Object>actualData;
-    @Given("kullanici connection kurar")
-    public void kullaniciConnectionKurar() {
+    @Given("kullanici DB icin connection kurar")
+    public void kullaniciDBicinConnectionKurar() {
       //  createConnection(ConfigReader.getProperty("database_url"),ConfigReader.getProperty("database_username"),
         //        ConfigReader.getProperty("database_password"));
         createConnection();
