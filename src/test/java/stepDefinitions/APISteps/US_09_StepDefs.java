@@ -40,7 +40,6 @@ public class US_09_StepDefs {
     @And("kullanici gelen bilgileri json{string}ya deserilization yapar")
     public void kullaniciGelenBilgileriJsonDanJavaYaDeserilizationYapar() {
     actual= ObjectMapperUtils.convertJsonToJava(response.asString(),PatientPojo.class);
-
     }
 
     @And("kullanici hasta bilgilerini API ile dogrular")
