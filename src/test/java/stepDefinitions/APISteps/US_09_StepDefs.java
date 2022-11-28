@@ -54,7 +54,7 @@ public class US_09_StepDefs {
         assertEquals(expected.getEmail(),actual.getEmail());
         assertEquals(expected.getBloodGroup(),actual.getBloodGroup());
         assertEquals(expected.getAdress(),actual.getAdress());
-
+//
 
     }
 }
