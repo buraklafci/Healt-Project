@@ -1,5 +1,6 @@
 Feature: Registration
   Scenario Outline: Registration Test
+
     Given kullanici "MedunnaUrl" anasayfasina gider
     Then kullanici bilgi sekmesine tiklanir
     And  kullanici register butonuna tiklar
